@@ -17,5 +17,14 @@ df = pd.DataFrame(data)
 #sorted_age=df.sort_values(by='Wiek')
 #print(sorted_age)
 
-g_b_p=df.groupby('Stanowisko')['Pensja'].mean()
-print(g_b_p)
+#g_b_p=df.groupby('Stanowisko')['Pensja'].mean()
+#print(g_b_p)
+
+dane_awans={
+    'Numer': [2,4],
+    'nowe_stanowiska' : ['Senior Programista', 'Senior Programista']
+}
+df_awans= pd.DataFrame(dane_awans)
+
+df_combined=pd.merge(df,df_awans,on='Numer', how= 'left')
+print(f'dobra to coś {df_combined}')
