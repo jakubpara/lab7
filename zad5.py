@@ -43,9 +43,16 @@ studenciak={'Nr_albumu': 7,
     'Nazwisko': 'Żyła',
     'Ocena': 3.5,
     'WiekS': 20,
-    'Ocena_poprawa': 4.0
+    'Ocena_poprawa': None
 }
-nowy = pd.DataFrame(studenciak)
 
-dfg = dff._append( nowy)
+dfg = dff._append(studenciak, ignore_index=True)
 print(dfg)
+
+#h)
+dfh=dfg['Ocena'].unique()
+print(f'unikalne oceny to {dfh}')
+
+#i)
+dfi=dff[dff['Ocena' or 'Ocena_poprawa']>4.5]
+print(f'ci mają 5\n {dfi}')
