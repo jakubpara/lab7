@@ -11,6 +11,7 @@ data = {
 }
 df = pd.DataFrame(data)
 
+print(df)
 #pracownicy_5k=df[df['Pensja']>5000]
 #print(f'paracownicy z wysoką pensją {pracownicy_5k}')
 
@@ -20,11 +21,11 @@ df = pd.DataFrame(data)
 #g_b_p=df.groupby('Stanowisko')['Pensja'].mean()
 #print(g_b_p)
 
-dane_awans={
+'''dane_awans={
     'Numer': [2,4],
     'nowe_stanowiska' : ['Senior Programista', 'Senior Programista']
 }
 df_awans= pd.DataFrame(dane_awans)
 
 df_combined=pd.merge(df,df_awans,on='Numer', how= 'left')
-print(f'dobra to coś {df_combined}')
+print(f'dobra to coś {df_combined}')'''
