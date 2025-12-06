@@ -11,21 +11,34 @@ data = {
 }
 df = pd.DataFrame(data)
 
-print(df)
-#pracownicy_5k=df[df['Pensja']>5000]
-#print(f'paracownicy z wysoką pensją {pracownicy_5k}')
+#A)
+pracownicy_5k=df[df['Pensja']>5000]
+print(f'paracownicy z wysoką pensją {pracownicy_5k}')
 
-#sorted_age=df.sort_values(by='Wiek')
-#print(sorted_age)
+#b)
+sorted_age=df.sort_values(by='Wiek')
+print(sorted_age)
 
-#g_b_p=df.groupby('Stanowisko')['Pensja'].mean()
-#print(g_b_p)
+#c)
+g_b_p=df.groupby('Stanowisko')['Pensja'].mean()
+print('\n śrenia pensja według stanowiska\n')
+print(g_b_p)
 
-'''dane_awans={
+#d)
+dane_awans={
     'Numer': [2,4],
     'nowe_stanowiska' : ['Senior Programista', 'Senior Programista']
 }
 df_awans= pd.DataFrame(dane_awans)
 
 df_combined=pd.merge(df,df_awans,on='Numer', how= 'left')
-print(f'dobra to coś {df_combined}')'''
+print(f'Nowe stanowiska \n  {df_combined}')
+
+#e)
+#df_combined.to_csv('dane_z_pracy.csv', index=False)
+#nie ma po co żeby sie wywolywalo nie wiadomo ile
+#f)
+
+df1=pd.read_csv('dane_z_pracy.csv')
+
+print(df1)
